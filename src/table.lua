@@ -60,4 +60,17 @@ function table.join(Array1, Array2)
 	return NewArray
 end
 
+function table.shuffle(Array)
+	local NewArray = table.unpack(Array)
+	
+	for i = #NewArray , 2, -1 do
+		local j = math.random(1, i)
+		local Temp = Array[j]
+		
+		NewArray[i], NewArray[j] = NewArray[j], NewArray[i]
+	end
+	
+	return NewArray
+end
+
 return table
